@@ -1,14 +1,13 @@
-# JPGNet: Joint Predictive Filtering and Generative Network for Image Inpainting
-We propose a new method for image inpainting by formulating it as a mix of two problems that predictive filtering and deep generation. This work has been accepted to ACM-MM 2021. Please refer to the paper for details: https://arxiv.org/pdf/2107.04281.pdf
-
-![Framework](./images/pipline.png)
+# MISF:Multi-level Interactive Siamese Filtering for High-Fidelity Image Inpainting
+We proposed multi-level interactive siamese filtering(MISF) for high-fidelity image inpainting. We use a single predictive network to conduct predictive filtering at the image level and deep feature level, simultaneously. The predictive network takes the raw input image and deep features to predict the filtering kernels at different levels. As a result, the predicted kernels contain information for joint semantic and pixel filling. Specifically, the image-level filtering is to recover details, while the deep feature-level filtering is to complete semantic information, which leads to high-fidelity inpainting results. In addition, the dynamically predicted kernels make our method have high generalization capability. Our method outperforms state-of-the-art methods on three public datasets. Furthermore, the extensive experiments demonstrate the effectiveness of different components of our approach.
+![Framework](./images/fig_frameworks.pdf)
 
 ## Dataset
 
-- Places2 [Data of Places365-Standard](http://places2.csail.mit.edu/download.html)
-- CelebA(https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
-- Dunhuang
-- Mask (https://nv-adlr.github.io/publication/partialconv-inpainting)
+- [Places2 Data of Places365-Standard](http://places2.csail.mit.edu/download.html)
+- [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
+- [Dunhuang]
+- [Mask](https://nv-adlr.github.io/publication/partialconv-inpainting)
 
 1. For data folder path (CelebA) organize them as following:
 
@@ -38,11 +37,11 @@ We propose a new method for image inpainting by formulating it as a mix of two p
 
 ## Pretrained models
 
-We release our pretrained model (CelebA) at [models](https://drive.google.com/drive/folders/1Bd6-J4IkB2BvRu1VlcwRYqrzebdd6MZc?usp=sharing)
+We release our pretrained model (CelebA) at [models](https://drive.google.com/)
 
-pretrained model (Places2) at [models](https://drive.google.com/drive/folders/1U6tSwMh2J_Tr_vR9BKMvCkEf0SITx1JE?usp=sharing)
+pretrained model (Places2) at [models](https://drive.google.com/)
 
-pretrained model (Dunhuang) at [models](https://drive.google.com/drive/folders/1DaPOfLNscra1mOwdUEUNIYbMqcoz4RRZ?usp=sharing)
+pretrained model (Dunhuang) at [models](https://drive.google.com/)
 
 ## Train
 
@@ -67,18 +66,23 @@ For the parameters: checkpoints/config.yml, kpn/config.py
 
 ## Bibtex
 
-```
-@article{guo2021jpgnet,
-  title={JPGNet: Joint Predictive Filtering and Generative Network for Image Inpainting},
-  author={Guo, Qing and Li, Xiaoguang and Juefei-Xu, Felix and Yu, Hongkai and Liu, Yang and others},
-  journal={ACM-MM},
-  year={2021}
-}
-```
+[//]: # (```)
+
+[//]: # (@article{guo2021jpgnet,)
+
+[//]: # (  title={JPGNet: Joint Predictive Filtering and Generative Network for Image Inpainting},)
+
+[//]: # (  author={Guo, Qing and Li, Xiaoguang and Juefei-Xu, Felix and Yu, Hongkai and Liu, Yang and others},)
+
+[//]: # (  journal={ACM-MM},)
+
+[//]: # (  year={2021})
+
+[//]: # (})
+
+[//]: # (```)
 
 ## Acknowledgments
 Parts of this code were derived from:<br>
 https://github.com/tsingqguo/efficientderain <br>
-https://github.com/knazeri/edge-connect <br>
-https://github.com/RenYurui/StructureFlow<br>
-https://github.com/jingyuanli001/RFR-Inpainting<br>
+https://github.com/knazeri/edge-connect
