@@ -1,5 +1,6 @@
 # MISF:Multi-level Interactive Siamese Filtering for High-Fidelity Image Inpainting
-We proposed multi-level interactive siamese filtering(MISF) for high-fidelity image inpainting. We use a single predictive network to conduct predictive filtering at the image level and deep feature level, simultaneously. The predictive network takes the raw input image and deep features to predict the filtering kernels at different levels. As a result, the predicted kernels contain information for joint semantic and pixel filling. Specifically, the image-level filtering is to recover details, while the deep feature-level filtering is to complete semantic information, which leads to high-fidelity inpainting results. In addition, the dynamically predicted kernels make our method have high generalization capability. Our method outperforms state-of-the-art methods on three public datasets. Furthermore, the extensive experiments demonstrate the effectiveness of different components of our approach.
+[ArXiv]()
+We proposed a novel approach for high-fidelity image inpainting. Specifically, we use a single predictive network to conduct predictive filtering at the image level and deep feature level, simultaneously. The image-level filtering is to recover details, while the deep feature-level filtering is to complete semantic information, which leads to high-fidelity inpainting results. Our method outperforms state-of-the-art methods on three public datasets. 
 ![Framework](./images/frameworks.png)
 
 ## Dataset
