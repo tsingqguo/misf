@@ -37,11 +37,11 @@ We proposed multi-level interactive siamese filtering(MISF) for high-fidelity im
 
 ## Pretrained models
 
-We release our pretrained model (CelebA) at [models](https://drive.google.com/)
+[CelebA](https://drive.google.com/)
 
-pretrained model (Places2) at [models](https://drive.google.com/)
+[Places2](https://drive.google.com/)
 
-pretrained model (Dunhuang) at [models](https://drive.google.com/)
+[Dunhuang](https://drive.google.com/)
 
 ## Train
 
@@ -60,7 +60,6 @@ For the parameters: checkpoints/config.yml, kpn/config.py
 - Comparsion with SOTA, see paper for details.
 
 ![Framework](./images/comparison.png)
-![Framework](./images/dunhuang_diff.png)
 
 
 **More details are coming soon**
