@@ -39,11 +39,11 @@ We proposed a novel approach for high-fidelity image inpainting. Specifically, w
 
 ## Pretrained models
 
-[CelebA](https://drive.google.com/)
+[CelebA](https://drive.google.com/drive/folders/14QVgtG5nbk5e00QRqEJBlBM5Q-aHF5Bd?usp=sharing)
 
-[Places2](https://drive.google.com/)
+[Places2](https://drive.google.com/drive/folders/14QVgtG5nbk5e00QRqEJBlBM5Q-aHF5Bd?usp=sharing)
 
-[Dunhuang](https://drive.google.com/)
+[Dunhuang](https://drive.google.com/drive/folders/14QVgtG5nbk5e00QRqEJBlBM5Q-aHF5Bd?usp=sharing)
 
 ## Train
 
