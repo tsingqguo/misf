@@ -68,21 +68,14 @@ For the parameters: checkpoints/config.yml, kpn/config.py
 
 ## Bibtex
 
-[//]: (```)
-
-[//]: (@article{guo2021jpgnet,)
-
-[//]: (  title={MISF: Multi-level Interactive Siamese Filtering for High-Fidelity Image Inpainting},)
-
-[//]: (  author={Li, Xiaoguang and Guo, Qing and Lin, Di and Li, Ping and Feng, Wei and Wang, Song},)
-
-[//]: (  journal={CVPR},)
-
-[//]: (  year={2022})
-
-[//]: (})
-
-[//]: (```)
+```
+@article{li2022misf,
+  title={MISF: Multi-level Interactive Siamese Filtering for High-Fidelity Image Inpainting},
+  author={Li, Xiaoguang and Guo, Qing and Lin, Di and Li, Ping and Feng, Wei and Wnag, Song},
+  journal={CVPR},
+  year={2022}
+}
+```
 
 ## Acknowledgments
 Parts of this code were derived from:<br>
