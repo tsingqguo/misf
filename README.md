@@ -1,4 +1,4 @@
-# MISF:Multi-level Interactive Siamese Filtering for High-Fidelity Image Inpainting
+# MISF: Multi-level Interactive Siamese Filtering for High-Fidelity Image Inpainting
 
 We proposed a novel approach for high-fidelity image inpainting. Specifically, we use a single predictive network to conduct predictive filtering at the image level and deep feature level, simultaneously. The image-level filtering is to recover details, while the deep feature-level filtering is to complete semantic information, which leads to high-fidelity inpainting results. Our method outperforms state-of-the-art methods on three public datasets.[[ArXiv]]()
 <br><br>
@@ -68,21 +68,21 @@ For the parameters: checkpoints/config.yml, kpn/config.py
 
 ## Bibtex
 
-[//]: # (```)
+[//]: (```)
 
-[//]: # (@article{guo2021jpgnet,)
+[//]: (@article{guo2021jpgnet,)
 
-[//]: # (  title={JPGNet: Joint Predictive Filtering and Generative Network for Image Inpainting},)
+[//]: (  title={MISF: Multi-level Interactive Siamese Filtering for High-Fidelity Image Inpainting},)
 
-[//]: # (  author={Guo, Qing and Li, Xiaoguang and Juefei-Xu, Felix and Yu, Hongkai and Liu, Yang and others},)
+[//]: (  author={Li, Xiaoguang and Guo, Qing and Lin, Di and Li, Ping and Feng, Wei and Wang, Song},)
 
-[//]: # (  journal={ACM-MM},)
+[//]: (  journal={CVPR},)
 
-[//]: # (  year={2021})
+[//]: (  year={2022})
 
-[//]: # (})
+[//]: (})
 
-[//]: # (```)
+[//]: (```)
 
 ## Acknowledgments
 Parts of this code were derived from:<br>
