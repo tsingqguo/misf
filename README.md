@@ -36,6 +36,10 @@ We proposed a novel approach for high-fidelity image inpainting. Specifically, w
 
  2. Run the code  `./data/data_list.py` to generate the data list
 
+## Architecture details
+
+<br><br>
+![Framework](./images/misf_arch.png)
 
 ## Pretrained models
 
