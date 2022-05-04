@@ -4,6 +4,10 @@ We proposed a novel approach for high-fidelity image inpainting. Specifically, w
 <br><br>
 ![Framework](./images/frameworks.png)
 
+## Prerequisites
+- Python 3
+- PyTorch >= 1.0
+
 ## Dataset
 
 - [Places2 Data of Places365-Standard](http://places2.csail.mit.edu/download.html)
