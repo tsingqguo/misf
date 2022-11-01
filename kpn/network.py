@@ -81,56 +81,26 @@ class Basic(nn.Module):
         return fm
 
 class KPN(nn.Module):
-    def __init__(self, color=True, burst_length=1, blind_est=True, kernel_size=[5], sep_conv=False,
-                 channel_att=False, spatial_att=False, upMode='bilinear', core_bias=False, filter_type=''):
+    def __init__(self, kernel_size=[3], sep_conv=False, channel_att=False, spatial_att=False, upMode='bilinear', core_bias=False):
         super(KPN, self).__init__()
         self.upMode = upMode
-        # self.burst_length = burst_length
         self.core_bias = core_bias
-        self.filter_type = filter_type.split(',')
         self.kernel_size = kernel_size
 
         in_channel = 4
-        # out_channel = c * (kernel_size[0] ** 2)
-        out_channel = 512
+        out_channel = 64 * (self.kernel_size[0] ** 2)
 
-        num = int(self.filter_type[0])
-
-        # 各个卷积层定义
-        # 2~5层都是均值池化+3层卷积
         self.conv1 = Basic(in_channel, 64, channel_att=False, spatial_att=False) # 256*256
         self.conv2 = Basic(64, 128, channel_att=False, spatial_att=False)        # 128*128
         self.conv3 = Basic(128 + 128, 256, channel_att=False, spatial_att=False)  # 64*64
 
         self.conv4 = Basic(256, 512, channel_att=False, spatial_att=False)
 
-        # self.conv5 = Basic(512, 512, channel_att=False, spatial_att=False)
-        # # 6~8层要先上采样再卷积
-        # self.conv6 = Basic(512 + 512, 512, channel_att=channel_att, spatial_att=spatial_att)
         self.conv7 = Basic(256 + 512, 256, channel_att=channel_att, spatial_att=spatial_att)
         self.conv8 = Basic(256 + 256, 128, channel_att=channel_att, spatial_att=spatial_att)
         self.conv9 = Basic(128 + 64, 64, channel_att=channel_att, spatial_att=spatial_att)
 
-
-
-        num = int(self.filter_type[0])
-        out_channel = num * (self.kernel_size[0] ** 2)
-
-        if '256' in self.filter_type:
-            self.kernels = nn.Conv2d(256, out_channel, 1, 1, 0)
-
-        if '64' in self.filter_type:
-            self.kernels = nn.Conv2d(256, out_channel, 1, 1, 0)
-
-        if '16' in self.filter_type:
-            self.kernels = nn.Conv2d(256, out_channel, 1, 1, 0)
-
-        if '4' in self.filter_type:
-            self.kernels = nn.Conv2d(256, out_channel, 1, 1, 0)
-
-        if '1' in self.filter_type:
-            self.kernels = nn.Conv2d(256, out_channel, 1, 1, 0)
-
+        self.kernels = nn.Conv2d(256, out_channel, 1, 1, 0)
 
         out_channel_img = 3 * (self.kernel_size[0] ** 2)
         self.core_img = nn.Conv2d(64, out_channel_img, 1, 1, 0)
@@ -141,7 +111,6 @@ class KPN(nn.Module):
 
         self.iteration = 0
 
-    # 前向传播函数
     def forward(self, data_with_est, x):
 
         conv1 = self.conv1(data_with_est) #64*256*256
@@ -157,11 +126,11 @@ class KPN(nn.Module):
         kernels = kernels.squeeze(dim=0)
 
 
-        conv4 = self.conv4(conv3)  # 512*64*64
+        conv4 = self.conv4(conv3)
 
-        conv7 = self.conv7(torch.cat([conv3, conv4], dim=1))  # 256*64*64
-        conv8 = self.conv8(torch.cat([conv2, F.interpolate(conv7, scale_factor=2, mode=self.upMode)], dim=1))  # 128*128*128
-        conv9 = self.conv9(torch.cat([conv1, F.interpolate(conv8, scale_factor=2, mode=self.upMode)], dim=1))  # 64*256*256
+        conv7 = self.conv7(torch.cat([conv3, conv4], dim=1))
+        conv8 = self.conv8(torch.cat([conv2, F.interpolate(conv7, scale_factor=2, mode=self.upMode)], dim=1))
+        conv9 = self.conv9(torch.cat([conv1, F.interpolate(conv8, scale_factor=2, mode=self.upMode)], dim=1))
         core_img = self.core_img(conv9)
 
         return kernels, core_img

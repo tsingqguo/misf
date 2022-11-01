@@ -23,4 +23,5 @@ def scan(input_path, out_put):
     with open(out_put, 'w') as j:
         json.dump(result_list, j)
 
-scan('mask', './flist.txt')
+scan('/Users/xiaoguangli/lxg/CV/publication/cvpr_2022/publication/code/misf/data/face', './face.txt')
+scan('/Users/xiaoguangli/lxg/CV/publication/cvpr_2022/publication/code/misf/data/mask', './mask.txt')

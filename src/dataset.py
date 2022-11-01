@@ -15,27 +15,20 @@ from torch.utils.data import DataLoader
 
 
 class Dataset(torch.utils.data.Dataset):
-    def __init__(self, config, flist, edge_flist, mask_flist, augment=True, training=True):
+    def __init__(self, config, flist, mask_flist, augment=True, training=True):
         super(Dataset, self).__init__()
         self.augment = augment
         self.training = training
         self.data = self.load_flist(flist)
-        self.edge_data = []
         self.mask_data = self.load_flist(mask_flist)
 
         self.input_size = config.INPUT_SIZE
         self.sigma = config.SIGMA
-        self.edge = config.EDGE
         self.mask = config.MASK
         self.nms = config.NMSMASK_REVERSE
 
         self.reverse_mask = config.MASK_REVERSE
         self.mask_threshold = config.MASK_THRESHOLD
-
-        # in test mode, there's a one-to-one relationship between mask and image
-        # masks are loaded non random
-        if config.MODE == 2:
-            self.mask = 6
 
         print('training:{}  mask:{}  mask_list:{}  data_list:{}'.format(training, self.mask, mask_flist, flist))
 
@@ -70,9 +63,6 @@ class Dataset(torch.utils.data.Dataset):
         if size != 0:
             img = self.resize(img, size, size)
 
-        # create grayscale image
-        img_gray = rgb2gray(img)
-
         # load mask
         mask = self.load_mask(img, index % len(self.mask_data))
 
@@ -83,11 +73,10 @@ class Dataset(torch.utils.data.Dataset):
         # augment data
         if self.augment and np.random.binomial(1, 0.5) > 0:
             img = img[:, ::-1, ...]
-            img_gray = img_gray[:, ::-1, ...]
             mask = mask[:, ::-1, ...]
 
 
-        return self.to_tensor(img), self.to_tensor(img_gray), self.to_tensor(img_gray), self.to_tensor(mask)
+        return self.to_tensor(img), self.to_tensor(mask)
 
 
     def load_mask(self, img, index):

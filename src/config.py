@@ -27,9 +27,6 @@ class Config(dict):
 
 
 DEFAULT_CONFIG = {
-    'MODE': 1,                      # 1: train, 2: test, 3: eval
-    'MODEL': 2,                     # 2: inpaint model
-    'MASK': 3,                      #  3: external
     'NMS': 1,
     'SEED': 10,                     # random seed
     'GPU': [0],                     # list of gpu ids
@@ -42,10 +39,8 @@ DEFAULT_CONFIG = {
     'BETA2': 0.9,                   # adam optimizer beta2
     'BATCH_SIZE': 8,                # input batch size for training
     'INPUT_SIZE': 256,              # input image size for training 0 for original size
-    'SIGMA': 2,                     # standard deviation of the Gaussian filter used in Canny edge detector (0: random, -1: no edge)
     'MAX_ITERS': 2e6,               # maximum number of iterations to train the model
 
-    'EDGE_THRESHOLD': 0.5,          # edge detection threshold
     'L1_LOSS_WEIGHT': 1,            # l1 loss weight
     'FM_LOSS_WEIGHT': 10,           # feature-matching loss weight
     'STYLE_LOSS_WEIGHT': 1,         # style loss weight

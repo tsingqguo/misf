@@ -8,34 +8,13 @@ import skimage
 import torch
 
 import kpn.network as network
-from kpn.config import get_opt
 
 
 # ----------------------------------------
 #                 Network
 # ----------------------------------------
-def create_generator(config):
-    opt = get_opt()
-
-    # Initialize the network
-    generator = network.KPN(opt.color, opt.burst_length, opt.blind_est, opt.kernel_size, opt.sep_conv, \
-        opt.channel_att, opt.spatial_att, opt.upMode, opt.core_bias, config.FILTER_TYPE)
-
-    if not os.path.exists(config.kpn_model_load_path):
-        network.weights_init(generator, init_type = opt.init_type, init_gain = opt.init_gain)
-        print('Generator is created!')
-    else:
-        if torch.cuda.is_available():
-            pretrained_net = torch.load(config.kpn_model_load_path)
-        else:
-            pretrained_net = torch.load(config.kpn_model_load_path, map_location='cpu')
-
-        load_dict(generator, pretrained_net)
-        print('Generator is loaded!__{}'.format(config.kpn_model_load_path))
-
-        iteration = config.kpn_model_load_path.split('/')[-1].split('_')[0]
-        generator.iteration = int(iteration)
-
+def create_generator():
+    generator = network.KPN()
     return generator
     
 def load_dict(process_net, pretrained_net):

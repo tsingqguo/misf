@@ -1,6 +1,3 @@
-MODE: 1             # 1: train, 2: test, 3: eval
-MODEL: 2            # 2: inpaint model
-MASK: 3             #  3: external
 NMS: 1
 SEED: 10            # random seed
 
@@ -11,9 +8,9 @@ TRAIN_FLIST: ./data/face.txt
 VAL_FLIST: ./data/face.txt
 TEST_FLIST: ./data/face.txt
 
-TRAIN_MASK_FLIST: ./data/mask_20.txt
-VAL_MASK_FLIST: ./data/mask_20.txt
-TEST_MASK_FLIST: ./data/mask_20.txt
+TRAIN_MASK_FLIST: ./data/mask.txt
+VAL_MASK_FLIST: ./data/mask.txt
+TEST_MASK_FLIST: ./data/mask.txt
 
 LR: 0.0001                    # learning rate
 D2G_LR: 0.1                   # discriminator/generator learning rate ratio
@@ -21,10 +18,8 @@ BETA1: 0.0                    # adam optimizer beta1
 BETA2: 0.9                    # adam optimizer beta2
 
 INPUT_SIZE: 256               # input image size for training 0 for original size
-SIGMA: 2                      # standard deviation of the Gaussian filter used in Canny edge detector (0: random, -1: no edge)
-MAX_ITERS: 2e6                # maximum number of iterations to train the model
+MAX_ITERS: 3.5e5                # maximum number of iterations to train the model
 
-EDGE_THRESHOLD: 0.5           # edge detection threshold
 L1_LOSS_WEIGHT: 1             # l1 loss weight
 FM_LOSS_WEIGHT: 10            # feature-matching loss weight
 STYLE_LOSS_WEIGHT: 250        # style loss weight
@@ -47,22 +42,16 @@ MASK_THRESHOLD: 0               # 100 dunhuang
 GPU: [0]            # list of gpu ids
 BATCH_SIZE: 1                 # input batch size for training
 
-SAVE_INTERVAL: 1          # how many iterations to wait before saving model (0: never)
-EVAL_INTERVAL: 1             # how many iterations to wait before model evaluation (0: never)
+SAVE_INTERVAL: 10000          # how many iterations to wait before saving model (0: never)
+EVAL_INTERVAL: 2000             # how many iterations to wait before model evaluation (0: never)
 
-TRAIN_SAMPLE_INTERVAL: 1
-EVAL_SAMPLE_INTERVAL: 1
+TRAIN_SAMPLE_INTERVAL: 1000
+EVAL_SAMPLE_INTERVAL: 200
 
-FILTER_TYPE: '64' #
 
 TRAIN_SAMPLE_SAVE: ./result/train_sample
 EVAL_SAMPLE_SAVE: ./result/eval_sample
 TEST_SAMPLE_SAVE: ./result/test_20
 
 
-
-MODEL_LOAD: 358000_InpaintingModel
-
-kpn_model_save_path: './result/model'
-
-kpn_model_load_path: './result/model/2_KPN_bs_1_.pth'
+MODEL_LOAD: celebA_InpaintingModel
