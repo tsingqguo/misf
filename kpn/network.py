@@ -122,7 +122,7 @@ class KPN(nn.Module):
         kernels = self.kernels(conv3)
         kernels = kernels.unsqueeze(dim=0)
 
-#         kernels = F.interpolate(input=kernels, size=(256*9, 64, 64), mode='nearest')
+#       kernels = F.interpolate(input=kernels, size=(256*9, 64, 64), mode='nearest')
         kernels = F.interpolate(input=kernels, size=(256*9, data_with_est.shape[-1]//4, data_with_est.shape[-2]//4), mode='nearest')
 
         kernels = kernels.squeeze(dim=0)
