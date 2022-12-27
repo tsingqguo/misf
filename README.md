@@ -13,7 +13,7 @@ We proposed a novel approach for high-fidelity image inpainting. Specifically, w
 - [Places2 Data of Places365-Standard](http://places2.csail.mit.edu/download.html)
 - [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
 - [Dunhuang]
-- [Mask](https://nv-adlr.github.io/publication/partialconv-inpainting)
+- [Mask](https://drive.google.com/file/d/1cuw8QGfiop9b4K7yo5wPgPqXBIHjS6MI/view?usp=share_link)
 
 1. For data folder path (CelebA) organize them as following:
 
