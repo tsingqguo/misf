@@ -5,8 +5,8 @@ We proposed a novel approach for high-fidelity image inpainting. Specifically, w
 ![Framework](./images/frameworks.png)
 
 ## Prerequisites
-- Python 3
-- PyTorch >= 1.0
+- Python 3.7
+- PyTorch >= 1.0 (test on PyTorch 1.0 and PyTorch 1.7.0)
 
 ## Dataset
 
