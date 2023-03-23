@@ -27,11 +27,12 @@ Try our method in Google Colab
 
 ## Enviroment setup
 - Python 3.7
-- PyTorch >= 1.0 (test on PyTorch 1.0, 1.7.0, 1.8.0)
+- PyTorch >= 1.0 (test on PyTorch 1.0, 1.7.0)
 
-pip install torch==1.8.0 torchvision==0.9.0
+conda create -n misf_env python=3.7
 
 cd misf
+
 pip install -r requirements.txt
 
 ## Dataset
