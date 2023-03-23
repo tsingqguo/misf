@@ -5,7 +5,6 @@ We proposed a novel approach for high-fidelity image inpainting. Specifically, w
 [[ArXiv]](https://arxiv.org/abs/2203.06304)
 ![colab](./images/colab.svg)
 
-<br><br>
 
 ![example_a](./images/frameworks.png)
 
