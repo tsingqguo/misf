@@ -2,14 +2,15 @@
 
 We proposed a novel approach for high-fidelity image inpainting. Specifically, we use a single predictive network to conduct predictive filtering at the image level and deep feature level, simultaneously. The image-level filtering is to recover details, while the deep feature-level filtering is to complete semantic information, which leads to high-fidelity inpainting results. Our method outperforms state-of-the-art methods on three public datasets.
 [[ArXiv]](https://arxiv.org/abs/2203.06304)
-<br><br>
-<center>
+<br>
+<p align="center">
 <a href = "https://colab.research.google.com/drive/16mdFLTaBGyeQMO5KErDTClr3gW4WP1di?usp=sharing">
     <img src="./images/colab.svg">
 </a>
 <br>
 Try our method in Google Colab
-</center>
+</p>
+<br>
 <br>
 
 ![example_a](./images/frameworks.png)
