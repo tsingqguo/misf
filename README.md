@@ -10,7 +10,6 @@ We proposed a novel approach for high-fidelity image inpainting. Specifically, w
 <br>
 Try our method in Google Colab
 </p>
-<br>
 
 ![example_a](./images/frameworks.png)
 
