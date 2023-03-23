@@ -30,6 +30,8 @@ Try our method in Google Colab
 
 conda create -n misf_env python=3.7
 
+conda activate misf_env
+
 cd misf
 
 pip install -r requirements.txt
