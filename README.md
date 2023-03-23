@@ -32,7 +32,7 @@ conda create -n misf_env python=3.7
 
 conda activate misf_env
 
-cd misf
+conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10.1 -c pytorch
 
 pip install -r requirements.txt
 
