@@ -11,7 +11,6 @@ We proposed a novel approach for high-fidelity image inpainting. Specifically, w
 Try our method in Google Colab
 </p>
 <br>
-<br>
 
 ![example_a](./images/frameworks.png)
 
