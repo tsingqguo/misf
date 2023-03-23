@@ -78,14 +78,8 @@ Such as test on the face dataset, please follow the following:
 3. python test.py #For the parameters: checkpoints/config.yml
 
 
-## Results
-
-- Comparsion with SOTA, see paper for details.
-
+## Comparsion with SOTA
 ![Framework](./images/comparison.png)
-
-
-**More details are coming soon**
 
 ## Bibtex
 
