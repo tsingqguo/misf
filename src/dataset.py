@@ -2,17 +2,14 @@ import json
 import os
 import random
 
+import cv2
 import numpy as np
-import scipy
 import torch
 import torchvision.transforms.functional as F
 from PIL import Image
-# from scipy.misc import imread
-from skimage.color import rgb2gray, gray2rgb
+from skimage.color import gray2rgb
 
 from torch.utils.data import DataLoader
-
-
 
 class Dataset(torch.utils.data.Dataset):
     def __init__(self, config, flist, mask_flist, augment=True, training=True):
@@ -76,19 +73,16 @@ class Dataset(torch.utils.data.Dataset):
             img = img[:, ::-1, ...]
             mask = mask[:, ::-1, ...]
 
-
         return self.to_tensor(img), self.to_tensor(mask)
 
 
     def load_mask(self, img, index):
         imgh, imgw = img.shape[0:2]
-        mask_type = self.mask
 
         if self.training:
             mask_index = random.randint(0, len(self.mask_data) - 1)
         else:
             mask_index = index
-            print('+++++++++++++++')
 
         mask = Image.open(self.mask_data[mask_index])
         mask = np.array(mask)
@@ -113,7 +107,7 @@ class Dataset(torch.utils.data.Dataset):
             i = (imgw - side) // 2
             img = img[j:j + side, i:i + side, ...]
 
-        img = scipy.misc.imresize(img, [height, width])
+        img = cv2.resize(img, dsize=(height, width))
 
         return img
 

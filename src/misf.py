@@ -257,6 +257,8 @@ class MISF():
                                               img_list=img_list,
                                               name_list=name_list, pixel_max_cnt=255, height=-1, width=-1)
 
+
+
             print('psnr_ave:{} ssim_ave:{} l1_ave:{} lpips:{}'.format(np.average(psnr_list),
                                                                                  np.average(ssim_list),
                                                                                  np.average(l1_list),
