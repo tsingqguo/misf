@@ -24,7 +24,7 @@ Try our method in Google Colab
 ![example_i](./images/gif/i.gif)
 ![example_l](./images/gif/l.gif)
 
-## Enviroment setup
+## Environment setup
 - Python 3.7
 - PyTorch >= 1.0 (test on PyTorch 1.0, 1.7.0)
 
