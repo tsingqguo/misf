@@ -48,6 +48,14 @@ Such as test on the places2 dataset, please following:
 1. Make sure you have downloaded the "places2_InpaintingModel_gen.pth" and put that inside the checkpoints folder.
 2. python test_one.py --img_path='./data/image/10.jpg' --mask_path='./data/mask/10_mask.png' --model_path='./checkpoints/places2_InpaintingModel_gen.pth'
 
+## Pretrained models
+
+[CelebA](https://drive.google.com/drive/folders/14QVgtG5nbk5e00QRqEJBlBM5Q-aHF5Bd?usp=sharing)
+
+[Places2](https://drive.google.com/drive/folders/14QVgtG5nbk5e00QRqEJBlBM5Q-aHF5Bd?usp=sharing)
+
+[Dunhuang](https://drive.google.com/drive/folders/14QVgtG5nbk5e00QRqEJBlBM5Q-aHF5Bd?usp=sharing)
+
 ## Dataset
 
 - [Places2 Data of Places365-Standard](http://places2.csail.mit.edu/download.html)
@@ -84,14 +92,6 @@ Such as test on the places2 dataset, please following:
 
 <br><br>
 ![Framework](./images/misf_arch.png)
-
-## Pretrained models
-
-[CelebA](https://drive.google.com/drive/folders/14QVgtG5nbk5e00QRqEJBlBM5Q-aHF5Bd?usp=sharing)
-
-[Places2](https://drive.google.com/drive/folders/14QVgtG5nbk5e00QRqEJBlBM5Q-aHF5Bd?usp=sharing)
-
-[Dunhuang](https://drive.google.com/drive/folders/14QVgtG5nbk5e00QRqEJBlBM5Q-aHF5Bd?usp=sharing)
 
 ## Comparsion with SOTA
 ![Framework](./images/comparison.png)
