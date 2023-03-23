@@ -11,7 +11,6 @@ We proposed a novel approach for high-fidelity image inpainting. Specifically, w
 ![example_g](./images/gif/g.gif)
 ![example_h](./images/gif/h.gif)
 ![example_i](./images/gif/i.gif)
-![example_k](./images/gif/k.gif)
 ![example_l](./images/gif/l.gif)
 
 ## Prerequisites
