@@ -36,6 +36,18 @@ conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10
 
 pip install -r requirements.txt
 
+## Train
+
+python train.py
+<br>
+For the parameters: checkpoints/config.yml
+
+## Test
+
+Such as test on the places2 dataset, please following:
+1. Make sure you have downloaded the "places2_InpaintingModel_gen.pth" and put that inside the checkpoints folder.
+2. python test_one.py --img_path='./data/image/10.jpg' --mask_path='./data/mask/10_mask.png' --model_path='./checkpoints/places2_InpaintingModel_gen.pth'
+
 ## Dataset
 
 - [Places2 Data of Places365-Standard](http://places2.csail.mit.edu/download.html)
@@ -80,18 +92,6 @@ pip install -r requirements.txt
 [Places2](https://drive.google.com/drive/folders/14QVgtG5nbk5e00QRqEJBlBM5Q-aHF5Bd?usp=sharing)
 
 [Dunhuang](https://drive.google.com/drive/folders/14QVgtG5nbk5e00QRqEJBlBM5Q-aHF5Bd?usp=sharing)
-
-## Train
-
-python train.py
-<br>
-For the parameters: checkpoints/config.yml
-
-## Test
-
-Such as test on the places2 dataset, please following:
-1. Make sure you have downloaded the "places2_InpaintingModel_gen.pth" and put that inside the checkpoints folder.
-2. python test_one.py --img_path='./data/image/10.jpg' --mask_path='./data/mask/10_mask.png' --model_path='./checkpoints/places2_InpaintingModel_gen.pth'
 
 ## Comparsion with SOTA
 ![Framework](./images/comparison.png)
