@@ -7,7 +7,7 @@ import scipy
 import torch
 import torchvision.transforms.functional as F
 from PIL import Image
-from scipy.misc import imread
+# from scipy.misc import imread
 from skimage.color import rgb2gray, gray2rgb
 
 from torch.utils.data import DataLoader
@@ -53,7 +53,8 @@ class Dataset(torch.utils.data.Dataset):
         size = self.input_size
 
         # load image
-        img = imread(self.data[index])
+        img = Image.open(self.data[index])
+        img = np.array(img)
 
         # gray to rgb
         if len(img.shape) < 3:
@@ -89,7 +90,8 @@ class Dataset(torch.utils.data.Dataset):
             mask_index = index
             print('+++++++++++++++')
 
-        mask = imread(self.mask_data[mask_index])
+        mask = Image.open(self.mask_data[mask_index])
+        mask = np.array(mask)
         mask = self.resize(mask, imgh, imgw)
         mask = (mask > self.mask_threshold).astype(np.uint8) * 255       # threshold due to interpolation
 
