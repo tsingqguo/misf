@@ -91,7 +91,7 @@ For the parameters: checkpoints/config.yml
 
 Such as test on the places2 dataset, please following:
 1. Make sure you have downloaded the "places2_InpaintingModel_gen.pth" and put that inside the checkpoints folder.
-2. python test_one.py --img_path='./data/image/10.jpg' --mask_path='./data/mask/10_mask.png' --model_path='/checkpoints/places2_InpaintingModel_gen.pth'
+2. python test_one.py --img_path='./data/image/10.jpg' --mask_path='./data/mask/10_mask.png' --model_path='./checkpoints/places2_InpaintingModel_gen.pth'
 
 ## Comparsion with SOTA
 ![Framework](./images/comparison.png)
