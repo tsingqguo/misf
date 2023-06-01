@@ -1,5 +1,5 @@
 opencv-python==3.4.17.63
 scikit-image==0.18.2
-pyyaml==5.3.1
+pyyaml==5.4
 pillow==9.4.0
 lpips==0.1.4
